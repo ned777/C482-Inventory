@@ -16,12 +16,11 @@ import model.*;
 import java.io.IOException;
 
 /**
- *  The AddPartController is responsible for managing the part inventory..
+ *  The AddPartController is responsible for managing the part inventory.
  */
 public class AddPartController {
 
     @FXML private Label MachineIDorCompany;
-
     @FXML private RadioButton PartInHouseRadio;
     @FXML private RadioButton PartOutsourcedRadio;
     @FXML private RadioButton addPartOutsourced;
@@ -135,4 +134,12 @@ public class AddPartController {
         }
     }
 
+    private ToggleGroup toggleGroup;
+    public void initialize() {
+        toggleGroup = new ToggleGroup();
+        PartInHouseRadio.setToggleGroup(toggleGroup);
+        PartOutsourcedRadio.setToggleGroup(toggleGroup);
+    }
+
 }
+

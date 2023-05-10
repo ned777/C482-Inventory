@@ -1,31 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="109db448-c4a6-4eba-b50d-75d76df77975" name="Changes" comment="" />
+    <list default="true" id="109db448-c4a6-4eba-b50d-75d76df77975" name="Changes" comment="WGU Java 1 tasks">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AddPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/C482-Inventory/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/C482-Inventory/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/C482-Inventory/controller/AddPartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/C482-Inventory/controller/AddPartController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="module" />
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2OrlbKhgFYSMUZi3m0VUCKND1Gt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nnguy/ResilioSync/Desktop/C482/install/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20/lib&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/nnguy/Downloads/C482- Inventory/C482-Inventory",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
@@ -45,6 +68,85 @@
       <option name="presentableId" value="Default" />
       <updated>1682326653098</updated>
     </task>
+    <task id="LOCAL-00001" summary="WGU Java 1 tasks">
+      <created>1683703646495</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683703646495</updated>
+    </task>
+    <task id="LOCAL-00002" summary="WGU Java 1 tasks">
+      <created>1683703789001</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683703789001</updated>
+    </task>
+    <task id="LOCAL-00003" summary="WGU Java 1 tasks">
+      <created>1683704091805</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683704091805</updated>
+    </task>
+    <task id="LOCAL-00004" summary="WGU Java 1 tasks">
+      <created>1683704112771</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683704112771</updated>
+    </task>
+    <task id="LOCAL-00005" summary="WGU Java 1 tasks">
+      <created>1683704272755</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683704272755</updated>
+    </task>
+    <task id="LOCAL-00006" summary="WGU Java 1 tasks">
+      <created>1683704306194</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683704306194</updated>
+    </task>
+    <task id="LOCAL-00007" summary="WGU Java 1 tasks">
+      <created>1683704413758</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683704413758</updated>
+    </task>
+    <task id="LOCAL-00008" summary="WGU Java 1 tasks">
+      <created>1683705139721</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683705139721</updated>
+    </task>
+    <task id="LOCAL-00009" summary="WGU Java 1 tasks">
+      <created>1683705458062</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683705458062</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="WGU Java 1 tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="WGU Java 1 tasks" />
   </component>
 </project>
