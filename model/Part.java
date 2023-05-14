@@ -3,11 +3,7 @@ package model;
  * Supplied class Part.java
  */
 
-/**
- *
- * @author Nam Nguyen
- */
-public abstract class Part {
+public class Part {
 
     private int id;
     private String name;

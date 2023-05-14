@@ -12,7 +12,10 @@ import model.*;
 
 import java.io.IOException;
 
-/** Main class creates inventory management app with sample data. */
+/**
+ * Main class creates inventory management app with sample data.
+ * JavaDoc files for this class can be found in the "doc" folder of the project directory.
+ *  */
 public class Main extends Application {
 
     /**

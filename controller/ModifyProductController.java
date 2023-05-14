@@ -17,6 +17,8 @@ import model.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Optional;
+
 
 /**
  * The ModifyProductController class is defined by the controller.
@@ -97,6 +99,7 @@ public class ModifyProductController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         modifyProductTable.setItems(Inventory.getAllParts());
+        modifyProductID.setDisable(true);
         modifyProductPartIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         modifyPartNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         modifyProductInventoryCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
@@ -139,7 +142,7 @@ public class ModifyProductController implements Initializable {
      * @param event
      */
     @FXML
-     void removeAssocPartButton(ActionEvent event) {
+    void removeAssocPartButton(ActionEvent event) {
         Part selectedPart = associatedProductTable.getSelectionModel().getSelectedItem();
 
         if (selectedPart == null) {
@@ -149,13 +152,21 @@ public class ModifyProductController implements Initializable {
             alert.showAndWait();
             return;
         }
-        else if (associatedPartsList.contains(selectedPart))
-        {
-            Product.deleteAssocdPart(selectedPart);
-            associatedPartsList.remove(selectedPart);
-            associatedProductTable.setItems(associatedPartsList);
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Confirmation");
+        confirmationAlert.setHeaderText("Remove Associated Part");
+        confirmationAlert.setContentText("Are you sure you want to remove this associated part?");
+
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            if (associatedPartsList.contains(selectedPart)) {
+                associatedPartsList.remove(selectedPart);
+                associatedProductTable.setItems(associatedPartsList);
+            }
         }
     }
+
 
     /**
      * @param event`

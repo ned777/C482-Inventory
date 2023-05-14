@@ -73,6 +73,7 @@ public class ModifyPartController  {
         }
 
         modifyPartID.setText(String.valueOf(part.getId()));
+        modifyPartID.setDisable(true);
         modifyPartName.setText(String.valueOf(part.getName()));
         modifyPartInv.setText(String.valueOf(part.getStock()));
         modifyPartPrice.setText(String.valueOf(part.getPrice()));

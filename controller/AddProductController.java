@@ -20,6 +20,8 @@ import model.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Optional;
+
 
 
 /**
@@ -76,8 +78,7 @@ public class AddProductController implements Initializable {
     @FXML
     void productSavePushed(ActionEvent event) throws IOException {
         try {
-
-            // To prevent overlap with existing parts, generate a random number and multiply it by 10000.
+            // Generate a random number and multiply it by 10000 for a unique ID.
             int uniqueID = (int) (Math.random() * 10000);
 
             String name = addProductName.getText();
@@ -86,27 +87,27 @@ public class AddProductController implements Initializable {
             int max = Integer.parseInt(addProductMax.getText());
             int min = Integer.parseInt(addProductMin.getText());
 
-            if (min > stock || stock < max) {
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory requirements: Inventory must be within min and max.");
+            if (stock < min || stock > max) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory must be within the min and max range.");
                 alert.showAndWait();
             } else if (min >= max) {
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory requirements: maximum must be greater than minimum");
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Minimum must be less than maximum.");
                 alert.showAndWait();
-            }
-
-            Product product = new Product(uniqueID, name, price, stock, min, max);
-
-            for (Part part: associatedPartsList) {
-                if (part != associatedPartsList)
+            } else {
+                Product product = new Product(uniqueID, name, price, stock, min, max);
+                for (Part part : associatedPartsList) {
                     product.addAssociatedParts(part);
+                }
+                Inventory.addProduct(product);
+
+                // Display the generated product ID in the disabled Product ID text field
+                addProductID.setText(String.valueOf(uniqueID));
+
+                Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+                Object scene = FXMLLoader.load(getClass().getResource("../views/MainScreen.fxml"));
+                stage.setScene(new Scene((Parent) scene));
+                stage.show();
             }
-
-            Inventory.getAllProducts().add(product);
-
-            Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-            Object scene = FXMLLoader.load(getClass().getResource("../views/MainScreen.fxml"));
-            stage.setScene(new Scene((Parent) scene));
-            stage.show();
 
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -116,6 +117,7 @@ public class AddProductController implements Initializable {
             return;
         }
     }
+
 
     /**
      * Include the part in the ObservableList.
@@ -144,6 +146,7 @@ public class AddProductController implements Initializable {
      * Remove the part to observablelist.
      * @param event
      */
+
     @FXML
     void removeAssocPartButton(ActionEvent event) {
         Part selectedPart = associatedProductTable.getSelectionModel().getSelectedItem();
@@ -155,12 +158,21 @@ public class AddProductController implements Initializable {
             alert.showAndWait();
             return;
         }
-        else if (associatedPartsList.contains(selectedPart))
-        {
-            associatedPartsList.remove(selectedPart);
-            associatedProductTable.setItems(associatedPartsList);
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Confirmation");
+        confirmationAlert.setHeaderText("Remove Associated Part");
+        confirmationAlert.setContentText("Are you sure you want to remove this associated part?");
+
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            if (associatedPartsList.contains(selectedPart)) {
+                associatedPartsList.remove(selectedPart);
+                associatedProductTable.setItems(associatedPartsList);
+            }
         }
     }
+
 
     /**
      * To display products and their associated parts, initialize and populate a table.
@@ -170,6 +182,11 @@ public class AddProductController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Generate a random number and multiply it by 10000 for a unique ID.
+        int uniqueID = (int) (Math.random() * 10000);
+
+        // Set the generated product ID in the disabled Product ID text field
+        addProductID.setText(String.valueOf(uniqueID));
 
         addProductTable.setItems(Inventory.getAllParts());
         addProductPartIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -183,8 +200,8 @@ public class AddProductController implements Initializable {
         associatedPartNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         associatedInventoryCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
         associatedPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
-
     }
+
 
     /**
      *  To enable users to filter parts based on text input, implement a search box.
